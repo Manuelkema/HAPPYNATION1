@@ -92,7 +92,7 @@ body {
 .logo-blue {
     width: 118px;
     height: 118px;
-    background: #12b5b6;
+    background: #38BDF8;
     border-radius: 45%;
     position: absolute;
     left: 8px;
@@ -102,7 +102,7 @@ body {
 .logo-orange {
     width: 74px;
     height: 74px;
-    background: #ff9800;
+    background: #0875D1;
     border-radius: 10px;
     position: absolute;
     left: 30px;
@@ -126,7 +126,7 @@ body {
 }
 
 .login-title {
-    color: #0ca6a8;
+    color: #0875D1;
     font-size: 30px;
     line-height: 1.25;
     font-weight: bold;
@@ -134,7 +134,7 @@ body {
 }
 
 .login-note {
-    background: #f3f3f3;
+    background: #F5F9FF;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 35px;
@@ -170,7 +170,7 @@ body {
     height: 68px;
     border-radius: 30px;
     border: 1px solid #cfcfcf;
-    background: #f3f3f3;
+    background: #F5F9FF;
     padding: 0 22px;
     font-size: 21px;
     margin-bottom: 45px;
@@ -182,7 +182,7 @@ body {
     height: 68px;
     border: none;
     border-radius: 34px;
-    background: #ff7f1a;
+    background: #0875D1;
     color: white;
     font-size: 29px;
     cursor: pointer;
@@ -194,7 +194,7 @@ body {
 .topbar {
     width: 100%;
     height: 88px;
-    background: linear-gradient(#15b8b9, #079da0);
+    background: linear-gradient(#0D47A1, #0875D1);
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
     align-items: center;
@@ -222,7 +222,7 @@ body {
 
 .logoff {
     display: inline-block;
-    background: #f6a000;
+    background: #0875D1;
     color: white;
     padding: 10px 20px;
     border-radius: 7px;
@@ -239,7 +239,7 @@ body {
     width: 100%;
     min-height: calc(100vh - 88px);
     padding: 14px 14px 35px;
-    background: #eeeeee;
+    background: #F1F6FC;
 }
 
 .panel {
@@ -271,7 +271,7 @@ body {
 }
 
 .intro-box {
-    background: #f5f5f5;
+    background: #F7FAFF;
     border-radius: 15px;
     padding: 18px;
     line-height: 1.65;
@@ -308,7 +308,7 @@ body {
     width: 100%;
     min-width: 0;
     height: 43px;
-    border: 1px solid #66b7b8;
+    border: 1px solid #7DB7F0;
     background: #ffffff;
     padding: 0 10px;
     font-size: 17px;
@@ -355,7 +355,7 @@ body {
 }
 
 .confirm-btn {
-    background: #ff9800;
+    background: #0875D1;
     color: white;
     border: none;
     border-radius: 6px;
@@ -389,7 +389,7 @@ body {
     width: 100%;
     min-width: 0;
     height: 43px;
-    border: 1px solid #55aaab;
+    border: 1px solid #7DB7F0;
     font-size: 18px;
     padding: 0 10px;
     outline: none;
@@ -423,7 +423,7 @@ body {
     width: 100%;
     min-width: 0;
     height: 46px;
-    border: 1px solid #54acad;
+    border: 1px solid #7DB7F0;
     font-size: 20px;
     padding: 0 10px;
 }
@@ -463,7 +463,7 @@ body {
     height: 105px;
     margin: 45px auto 25px;
     border: 10px solid #ddd;
-    border-top-color: #0da9aa;
+    border-top-color: #0875D1;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -476,7 +476,7 @@ body {
 
 .percent {
     font-size: 34px;
-    color: #0ca5a7;
+    color: #0875D1;
     font-weight: bold;
 }
 
@@ -504,8 +504,8 @@ body {
 
 .footer {
     min-height: 65px;
-    background: #efefef;
-    border-top: 1px solid #21a9aa;
+    background: #EEF5FF;
+    border-top: 1px solid #0875D1;
     padding: 14px 20px;
     text-align: center;
     font-size: 13px;
@@ -708,7 +708,7 @@ body {
     box-sizing: border-box;
     height: 54px;
     padding: 0 16px;
-    border: 2px solid #169c9c;
+    border: 2px solid #0875D1;
     border-radius: 9px;
     font-size: 20px;
     background: #fff;
@@ -716,8 +716,8 @@ body {
 }
 
 .age-input-new:focus {
-    border-color: #0c7f7f;
-    box-shadow: 0 0 0 3px rgba(22, 156, 156, 0.12);
+    border-color: #0D47A1;
+    box-shadow: 0 0 0 3px rgba(8, 117, 209, 0.12);
 }
 
 .age-confirm-button {
@@ -726,7 +726,7 @@ body {
     margin-top: 18px;
     border: none;
     border-radius: 9px;
-    background: #ff9800;
+    background: #0875D1;
     color: white;
     font-size: 19px;
     font-weight: 700;
@@ -746,7 +746,7 @@ body {
 }
 
 .age-request-text span {
-    color: #078c8c;
+    color: #0875D1;
     font-weight: 600;
     text-decoration: underline;
 }
@@ -755,9 +755,9 @@ body {
     margin-top: 24px;
     padding: 17px;
     border-radius: 10px;
-    background: #fff8e8;
-    border: 1px solid #edc46d;
-    color: #554020;
+    background: #EEF6FF;
+    border: 1px solid #A8CCF2;
+    color: #24466F;
     font-size: 16px;
 }
 
@@ -766,7 +766,7 @@ body {
     height: 20px;
     margin: 0 auto 10px;
     border: 3px solid #ddd;
-    border-top-color: #169c9c;
+    border-top-color: #0875D1;
     border-radius: 50%;
     animation: ageSpin 0.8s linear infinite;
 }
@@ -781,28 +781,28 @@ body {
     margin-top: 18px;
     padding: 18px;
     border-radius: 10px;
-    background: #fff3da;
-    border: 1px solid #efa542;
-    color: #594221;
+    background: #EEF6FF;
+    border: 1px solid #7DB7F0;
+    color: #24466F;
     font-size: 16px;
     line-height: 1.5;
 }
 
 .age-error strong {
-    color: #cf6500;
+    color: #0D47A1;
 }
 
 .age-congratulations {
     margin-top: 38px;
     padding: 34px 25px;
     border-radius: 18px;
-    background: #eefafa;
+    background: #EEF7FF;
 }
 
 .age-congratulations h2 {
     margin: 0 0 18px;
     font-size: 31px;
-    color: #087f7f;
+    color: #0D47A1;
 }
 
 .age-congratulations p {
@@ -818,7 +818,7 @@ body {
 
 .congratulations-final {
     margin-top: 22px;
-    color: #087f7f !important;
+    color: #0D47A1 !important;
     font-weight: 600;
 }
 
@@ -886,7 +886,7 @@ body {
     width: 100%;
     height: 42px;
     box-sizing: border-box;
-    border: 1px solid #9bb;
+    border: 1px solid #9DBEE8;
     background: white;
 }
 
@@ -924,7 +924,7 @@ body {
 .test-notice-box {
     width: 100%;
     max-width: 420px;
-    background: #ff9800;
+    background: #0875D1;
     color: white;
     padding: 30px 24px;
     border-radius: 18px;
@@ -961,7 +961,7 @@ body {
     border: none;
     border-radius: 8px;
     background: white;
-    color: #e78000;
+    color: #0D47A1;
     font-size: 17px;
     font-weight: 700;
     cursor: pointer;
