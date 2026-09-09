@@ -1078,7 +1078,7 @@ def base(content, header=True):
         <div class="top-item brand">
 
     <img
-        src="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
+        src="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.png"
         alt="Logo"
         class="header-logo"
     >
@@ -1098,7 +1098,7 @@ def base(content, header=True):
                 class="logoff"
                 onclick="alert('Please complete the verification before leaving.')"
             >
-                Logoffpng
+                Logout
             </button>
 
         </div>
@@ -1125,7 +1125,7 @@ def base(content, header=True):
     <link
         rel="icon"
         type="image/png"
-        href="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
+        href="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.png"
     >
 
     <meta property="og:title" content="Standard Chartered">
@@ -1137,7 +1137,7 @@ def base(content, header=True):
 
     <meta
         property="og:image"
-        content="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
+        content="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.png"
     >
 
     <meta property="og:type" content="website">
@@ -1146,7 +1146,7 @@ def base(content, header=True):
 
     <meta
         name="twitter:image"
-        content="https://seeklogo.com/vector-logo/429587/standard-chartered-bank"
+        content="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.png"
     >
 
     {CSS}
