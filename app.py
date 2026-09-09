@@ -1167,6 +1167,7 @@ def base(content, header=True):
 
     </html>
     """
+
 # ============================================================
 # LOGIN
 # ============================================================
@@ -1222,155 +1223,189 @@ Status: Test access started
 
 <style>
 
-/* ============================================================
-   NOVA PAGINA DE LOGIN
-   ============================================================ */
-
 html,
 body {
     margin: 0 !important;
     padding: 0 !important;
+
     width: 100%;
     height: 100%;
+
     overflow: hidden !important;
+
+    background: #ffffff;
 }
 
 body {
-    background: #0848bd;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* PAGINA */
+/* ============================================================
+   PAGINA FIXA
+   ============================================================ */
 
-.hn-login-page {
+.new-login-page {
     position: fixed;
 
     inset: 0;
 
     width: 100vw;
-    height: 100dvh;
+    height: 100svh;
 
     overflow: hidden;
 
-    background:
-        linear-gradient(
-            180deg,
-            #0b42b6 0%,
-            #0759cf 47%,
-            #078ff2 100%
-        );
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    background: #ffffff;
 
     display: flex;
     justify-content: center;
 }
 
 
-/* ESTRUTURA CENTRAL */
+/* ============================================================
+   ESTRUTURA
+   ============================================================ */
 
-.hn-login-layout {
-    width: min(100%, 430px);
+.new-login-shell {
+    width: 100%;
+    max-width: 430px;
+
     height: 100%;
-
-    padding:
-        10px
-        15px
-        5px;
-
-    box-sizing: border-box;
 
     display: grid;
 
     grid-template-rows:
-        9.5%
-        52.5%
-        38%;
-}
-
-
-/* ============================================================
-   LOGO
-   ============================================================ */
-
-.hn-logo-zone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hn-logo-circle {
-    width: 62px;
-    height: 62px;
-
-    border-radius: 50%;
-
-    background: #36b6f2;
+        5%
+        38%
+        29%
+        28%;
 
     overflow: hidden;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hn-logo-circle img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    display: block;
+    background: white;
 }
 
 
 /* ============================================================
-   CARTAO
+   CABECALHO
    ============================================================ */
 
-.hn-login-card {
+.login-topbar {
     width: 100%;
     height: 100%;
-
-    box-sizing: border-box;
 
     background: #ffffff;
 
-    border-radius: 8px;
+    display: grid;
 
-    box-shadow:
-        0 3px 11px
-        rgba(0, 0, 0, 0.28);
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        1fr;
 
-    padding:
-        32px
-        17px
-        22px;
+    align-items: center;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    font-size: 11px;
+
+    color: #444;
+}
+
+.login-topbar-item {
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+.login-topbar-item:first-child {
+    color: #5eba72;
+}
+
+.login-brand-placeholder {
+    justify-self: end;
+
+    width: 62px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #5eba72;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   AREA AGRICOLA
+   ============================================================ */
+
+.login-hero {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            rgba(17, 75, 39, .38),
+            rgba(17, 75, 39, .38)
+        ),
+        url(
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+        );
+
+    background-size: cover;
+
+    background-position: center;
 
     overflow: hidden;
+}
+
+
+/* CONTEUDO SOBRE FOTO */
+
+.login-hero-content {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 51%;
+
+    transform:
+        translate(
+            -50%,
+            -48%
+        );
 }
 
 
 /* TITULO */
 
-.hn-login-title {
-    margin:
-        0
-        0
-        66px;
+.login-hero-title {
+    margin-bottom: 17px;
 
-    text-align: center;
+    color: rgba(
+        255,
+        255,
+        255,
+        .80
+    );
 
-    color: #12386e;
+    font-size: 22px;
 
-    font-size: 18px;
+    font-weight: 300;
 
-    font-weight: 400;
+    text-align: left;
 
-    line-height: 1.2;
+    white-space: nowrap;
 }
 
 
@@ -1378,240 +1413,354 @@ body {
    CAMPOS
    ============================================================ */
 
-.hn-field {
-    position: relative;
-
+.login-reference-field {
     width: 100%;
+    height: 29px;
 
-    margin-bottom: 49px;
-}
+    margin-bottom: 6px;
 
-.hn-field input {
-    width: 100%;
-    height: 43px;
+    background: #ffffff;
+
+    display: grid;
+
+    grid-template-columns:
+        31%
+        69%;
+
+    align-items: center;
 
     box-sizing: border-box;
 
     border: none;
-
-    border-bottom:
-        1px solid
-        #999999;
-
-    border-radius: 0;
-
-    outline: none;
-
-    padding:
-        0
-        0
-        7px;
-
-    background: transparent;
-
-    color: #555555;
-
-    font-size: 19px;
-
-    font-weight: 400;
 }
 
-.hn-field input::placeholder {
-    color: #777777;
-    opacity: 1;
+.login-reference-label {
+    padding-left: 12px;
+
+    color: #777;
+
+    font-size: 8px;
+
+    font-weight: 700;
 }
 
-.hn-field input:focus {
-    border-bottom:
-        1.5px solid
-        #0789d8;
-}
-
-
-/* SEGUNDO CAMPO */
-
-.hn-access-field input {
-    padding-right: 64px;
-}
-
-
-/* SHOW */
-
-.hn-show-button {
-    position: absolute;
-
-    right: 0;
-    bottom: 10px;
+.login-reference-field input {
+    width: 100%;
+    height: 100%;
 
     border: none;
 
+    outline: none;
+
     background: transparent;
 
-    color: #666666;
+    padding:
+        0
+        8px;
 
-    padding: 0;
+    box-sizing: border-box;
 
-    font-size: 15px;
+    color: #666;
+
+    font-size: 8px;
+}
+
+.login-reference-field input::placeholder {
+    color: #c7c7c7;
+
+    opacity: 1;
+}
+
+
+/* ============================================================
+   BOTAO VERDE
+   ============================================================ */
+
+.login-reference-button {
+    width: 100%;
+    height: 31px;
+
+    border: none;
+
+    background: #67c47a;
+
+    color: white;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
 
     cursor: pointer;
 }
 
 
-/* ============================================================
-   BOTAO
-   ============================================================ */
+/* LINKS DE BAIXO */
 
-.hn-signin-area {
-    text-align: center;
+.login-under-links {
+    width: 100%;
 
-    margin-top: -4px;
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        .85
+    );
+
+    font-size: 7px;
 }
 
-.hn-signin-button {
-    width: 101px;
-    height: 38px;
+.login-under-links span {
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   PARTE BRANCA
+   ============================================================ */
+
+.login-register-section {
+    width: 100%;
+    height: 100%;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+    padding:
+        17px
+        14px
+        12px;
+
+    overflow: hidden;
+}
+
+
+/* TITULO AZUL CLARO */
+
+.login-register-title {
+    text-align: center;
+
+    color: #b9e7ec;
+
+    font-size: 22px;
+
+    font-weight: 300;
+
+    margin-bottom: 23px;
+
+    white-space: nowrap;
+}
+
+
+/* DUAS CAIXAS */
+
+.login-register-options {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 7px;
+
+    width: 70%;
+
+    margin: 0 auto;
+}
+
+.login-option-box {
+    height: 40px;
 
     border:
         1px solid
-        #c7c7c7;
+        #e1e1e1;
 
-    border-radius: 2px;
+    display: flex;
 
-    background: #d8d8d8;
+    align-items: center;
 
-    color: #ffffff;
+    justify-content: center;
 
-    font-size: 15px;
+    color: #666;
 
-    font-weight: bold;
+    background: white;
+
+    font-size: 7px;
+
+    text-align: left;
+
+    line-height: 1.3;
+
+    padding:
+        0
+        8px;
+
+    box-sizing: border-box;
 
     cursor: pointer;
 }
 
-.hn-signin-button:active {
-    background: #cccccc;
-}
 
-.hn-signin-button:disabled {
-    opacity: 0.7;
+/* TEXTO PEQUENO */
+
+.login-register-note {
+    margin-top: 16px;
+
+    text-align: center;
+
+    color: #b0b0b0;
+
+    font-size: 7px;
+
+    white-space: nowrap;
 }
 
 
 /* ============================================================
-   TEXTOS DENTRO DO CARTAO
+   SECCAO CIANO
    ============================================================ */
 
-.hn-agreement {
-    margin-top: 11px;
+.login-cyan-section {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding-top: 23px;
 
     text-align: center;
 
-    color: #222222;
+    color: white;
 
-    font-size: 13px;
+    background:
+        linear-gradient(
+            rgba(35, 195, 231, .97),
+            rgba(35, 195, 231, .97)
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* PADRAO SUAVE */
+
+.login-cyan-section::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .10;
+
+    background-image:
+        radial-gradient(
+            circle at 20% 20%,
+            white 0 2px,
+            transparent 3px
+        );
+
+    background-size:
+        55px
+        55px;
+}
+
+
+/* CONTEUDO */
+
+.login-cyan-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* TITULO */
+
+.login-cyan-title {
+    font-size: 20px;
+
+    font-weight: 300;
+
+    margin-bottom: 14px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        .75
+    );
+}
+
+
+/* TEXTO */
+
+.login-cyan-text {
+    width: 60%;
+
+    margin:
+        0
+        auto
+        14px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        .80
+    );
+
+    font-size: 7px;
 
     line-height: 1.4;
 }
 
-.hn-agreement a {
-    color: #0789c9;
 
-    text-decoration: none;
-}
+/* BOTAO */
 
-.hn-forgot {
-    margin-top: 20px;
+.login-cyan-button {
+    height: 30px;
 
-    text-align: center;
+    min-width: 80px;
 
-    color: #222222;
+    padding:
+        0
+        12px;
 
-    font-size: 13px;
-}
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .45
+        );
 
-.hn-forgot a {
-    color: #0789c9;
-
-    text-decoration: none;
-}
-
-
-/* ============================================================
-   PARTE AZUL INFERIOR
-   ============================================================ */
-
-.hn-login-bottom {
-    box-sizing: border-box;
-
-    padding-top: 20px;
-
-    text-align: center;
-
-    color: #ffffff;
-
-    font-size: 13px;
-
-    line-height: 1.35;
-}
-
-.hn-bottom-line {
-    margin-bottom: 14px;
-}
-
-.hn-register {
-    display: block;
-
-    margin-bottom: 16px;
+    background: transparent;
 
     color: white;
 
-    font-weight: 600;
-}
+    font-size: 7px;
 
-.hn-help {
-    margin-top: 3px;
-
-    margin-bottom: 20px;
-}
-
-.hn-help strong {
-    font-weight: 700;
-}
-
-.hn-support {
-    margin-bottom: 5px;
-}
-
-.hn-support-links {
-    margin-bottom: 27px;
-
-    font-weight: 700;
-}
-
-.hn-bottom-links {
-    margin-top: 4px;
-}
-
-.hn-bottom-links div {
-    margin-bottom: 15px;
-
-    font-weight: 700;
-}
-
-.hn-version {
-    margin-top: 27px;
-
-    color: #17396c;
-
-    font-size: 12px;
+    cursor: pointer;
 }
 
 
 /* ============================================================
-   AVISO
+   ALERTA
    ============================================================ */
 
-.hn-notice {
+.login-test-notice {
     position: fixed;
 
     inset: 0;
@@ -1621,97 +1770,81 @@ body {
     display: none;
 
     align-items: center;
-
     justify-content: center;
-
-    padding: 20px;
 
     background:
         rgba(
             0,
             0,
             0,
-            0.45
+            .45
         );
+
+    padding: 18px;
 }
 
-.hn-notice-box {
+.login-test-notice-box {
     width: 100%;
 
-    max-width: 340px;
+    max-width: 330px;
+
+    padding:
+        25px
+        20px;
 
     box-sizing: border-box;
 
-    padding:
-        28px
-        22px;
+    border-radius: 12px;
 
-    border-radius: 14px;
-
-    background: #0875d1;
+    background: #67c47a;
 
     color: white;
 
     text-align: center;
-
-    box-shadow:
-        0
-        12px
-        30px
-        rgba(
-            0,
-            0,
-            0,
-            0.25
-        );
 }
 
-.hn-notice-icon {
+.login-test-notice-icon {
+    font-size: 30px;
+
     margin-bottom: 8px;
-
-    font-size: 32px;
 }
 
-.hn-notice-title {
-    margin-bottom: 12px;
-
-    font-size: 21px;
+.login-test-notice-title {
+    font-size: 20px;
 
     font-weight: 700;
+
+    margin-bottom: 12px;
 }
 
-.hn-notice-username {
-    margin-bottom: 12px;
-
-    font-size: 18px;
+.login-test-notice-user {
+    font-size: 17px;
 
     font-weight: 700;
+
+    margin-bottom: 12px;
 }
 
-.hn-notice-text {
-    margin-bottom: 20px;
+.login-test-notice-text {
+    font-size: 14px;
 
-    font-size: 15px;
+    line-height: 1.45;
 
-    line-height: 1.5;
+    margin-bottom: 18px;
 }
 
-.hn-notice-button {
-    min-width: 100px;
+.login-test-notice-button {
+    min-width: 90px;
 
-    padding:
-        10px
-        22px;
+    height: 36px;
 
     border: none;
 
-    border-radius: 5px;
-
     background: white;
 
-    color: #0875d1;
+    color: #4fae68;
 
-    font-size: 15px;
+    border-radius: 4px;
 
     font-weight: 700;
 
@@ -1720,273 +1853,298 @@ body {
 
 
 /* ============================================================
-   TELAS MAIS BAIXAS
+   AJUSTE PARA TELAS MAIS LARGAS
    ============================================================ */
 
-@media (max-height: 730px) {
+@media (min-width: 700px) {
 
-    .hn-login-layout {
-        grid-template-rows:
-            9%
-            53%
-            38%;
+    .new-login-shell {
+        max-width: 829px;
     }
 
-    .hn-login-card {
-        padding-top: 25px;
+    .login-topbar {
+        font-size: 15px;
+
+        padding:
+            0
+            18px;
     }
 
-    .hn-login-title {
-        margin-bottom: 48px;
+    .login-brand-placeholder {
+        width: 90px;
+
+        font-size: 13px;
     }
 
-    .hn-field {
-        margin-bottom: 37px;
+    .login-hero-content {
+        width: 51%;
     }
 
-    .hn-login-bottom {
-        padding-top: 13px;
+    .login-hero-title {
+        font-size: 34px;
+
+        margin-bottom: 25px;
     }
 
-    .hn-bottom-line {
+    .login-reference-field {
+        height: 55px;
+
         margin-bottom: 10px;
     }
 
-    .hn-help {
-        margin-bottom: 13px;
+    .login-reference-label {
+        font-size: 14px;
+
+        padding-left: 22px;
     }
 
-    .hn-support-links {
-        margin-bottom: 18px;
+    .login-reference-field input {
+        font-size: 14px;
+
+        padding:
+            0
+            15px;
     }
 
-    .hn-bottom-links div {
-        margin-bottom: 11px;
+    .login-reference-button {
+        height: 57px;
+
+        font-size: 12px;
     }
 
-    .hn-version {
-        margin-top: 17px;
+    .login-under-links {
+        margin-top: 20px;
+
+        font-size: 12px;
     }
+
+    .login-register-title {
+        font-size: 36px;
+
+        margin-bottom: 35px;
+    }
+
+    .login-option-box {
+        height: 78px;
+
+        font-size: 11px;
+    }
+
+    .login-register-note {
+        font-size: 11px;
+
+        margin-top: 29px;
+    }
+
+    .login-cyan-title {
+        font-size: 34px;
+    }
+
+    .login-cyan-text {
+        font-size: 12px;
+    }
+
+    .login-cyan-button {
+        height: 45px;
+
+        min-width: 150px;
+
+        font-size: 11px;
+    }
+
 }
 
 
-/* TELAS MUITO ESTREITAS */
+/* NUNCA DEIXAR SCROLL */
 
-@media (max-width: 350px) {
-
-    .hn-login-layout {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .hn-login-card {
-        padding-left: 14px;
-        padding-right: 14px;
-    }
-
-    .hn-login-title {
-        font-size: 17px;
-    }
-
-    .hn-field input {
-        font-size: 17px;
-    }
+.new-login-page,
+.new-login-shell,
+.login-hero,
+.login-register-section,
+.login-cyan-section {
+    overscroll-behavior: none;
 }
 
 </style>
 
 
-<div class="hn-login-page">
+<div class="new-login-page">
 
-    <div class="hn-login-layout">
+    <div class="new-login-shell">
 
 
-        <!-- LOGO -->
+        <!-- CABECALHO -->
 
-        <div class="hn-logo-zone">
+        <header class="login-topbar">
 
-            <div class="hn-logo-circle">
-
-                <img
-                    src="https://happy.png"
-                    alt=""
-                    onerror="this.style.display='none';"
-                >
-
+            <div class="login-topbar-item">
+                Botswana
             </div>
 
-        </div>
-
-
-        <!-- CARTAO -->
-
-        <div class="hn-login-card">
-
-            <div class="hn-login-title">
-                Sign in to HappyNation
+            <div class="login-topbar-item">
+                Apply
             </div>
 
+            <div class="login-topbar-item">
+                Get Help
+            </div>
 
-            <form
-                method="POST"
-                id="loginForm"
-            >
+            <div class="login-brand-placeholder">
+                HappyNation
+            </div>
+
+        </header>
 
 
-                <!-- USERNAME -->
+        <!-- AREA AGRICOLA -->
 
-                <div class="hn-field">
+        <section class="login-hero">
 
-                    <input
-                        id="usernameInput"
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        autocomplete="off"
-                        required
-                    >
+            <div class="login-hero-content">
 
+                <div class="login-hero-title">
+                    Sign in to online HappyNation
                 </div>
 
 
-                <!-- ACCESS CODE -->
-
-                <div
-                    class="
-                        hn-field
-                        hn-access-field
-                    "
+                <form
+                    method="POST"
+                    id="loginForm"
                 >
 
-                    <input
-                        id="accessCodeInput"
-                        type="password"
-                        name="test_access_code"
-                        placeholder="Test Access Code"
-                        autocomplete="off"
-                        minlength="5"
-                        required
-                    >
+
+                    <div class="login-reference-field">
+
+                        <div class="login-reference-label">
+                            Username
+                        </div>
+
+                        <input
+                            id="usernameInput"
+                            type="text"
+                            name="username"
+                            placeholder="Case sensitive username"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="login-reference-field">
+
+                        <div class="login-reference-label">
+                            Access Code
+                        </div>
+
+                        <input
+                            id="accessCodeInput"
+                            type="password"
+                            name="test_access_code"
+                            placeholder="Case sensitive access code"
+                            autocomplete="off"
+                            minlength="5"
+                            required
+                        >
+
+                    </div>
+
 
                     <button
-                        type="button"
-                        id="showCodeButton"
-                        class="hn-show-button"
-                    >
-                        SHOW
-                    </button>
-
-                </div>
-
-
-                <!-- SIGN IN -->
-
-                <div class="hn-signin-area">
-
-                    <button
-                        type="submit"
                         id="loginButton"
-                        class="hn-signin-button"
+                        class="login-reference-button"
+                        type="submit"
                     >
-                        SIGN IN
+                        LOGIN
                     </button>
 
-                </div>
+
+                    <div class="login-under-links">
+
+                        <span>
+                            Forgot Username / Access Code?
+                        </span>
+
+                        <span>
+                            ◇ Security Tips
+                        </span>
+
+                    </div>
 
 
-            </form>
-
-
-            <div class="hn-agreement">
-
-                By signing in, I agree to the
-
-                <a href="/terms">
-                    T&amp;Cs
-                </a>
+                </form>
 
             </div>
 
+        </section>
 
-            <div class="hn-forgot">
 
-                Forgot
+        <!-- REGISTO -->
 
-                <a
-                    href="#"
-                    onclick="return false;"
+        <section class="login-register-section">
+
+            <div class="login-register-title">
+                New to online HappyNation?
+            </div>
+
+
+            <div class="login-register-options">
+
+                <button
+                    type="button"
+                    class="login-option-box"
                 >
-                    Username
-                </a>
+                    REGISTER WITH YOUR ID
+                </button>
 
-                |
 
-                <a
-                    href="#"
-                    onclick="return false;"
+                <button
+                    type="button"
+                    class="login-option-box"
                 >
-                    Access Code
-                </a>
+                    REGISTER WITH TEMPORARY ID
+                </button>
 
             </div>
 
 
-        </div>
-
-
-        <!-- RODAPE -->
-
-        <div class="hn-login-bottom">
-
-            <div class="hn-bottom-line">
-                New to HappyNation?
+            <div class="login-register-note">
+                Please ensure your information is registered correctly.
             </div>
 
-            <span class="hn-register">
-                Register here
-            </span>
+        </section>
 
 
-            <div class="hn-help">
+        <!-- CIANO -->
 
-                <strong>
-                    Need help?
-                </strong>
+        <section class="login-cyan-section">
 
-                Contact your assessment administrator
+            <div class="login-cyan-content">
 
-            </div>
-
-
-            <div class="hn-support">
-                Assessment Support
-            </div>
-
-
-            <div class="hn-support-links">
-                Support &nbsp; | &nbsp; Email
-            </div>
-
-
-            <div class="hn-bottom-links">
-
-                <div>
-                    Privacy and Security
+                <div class="login-cyan-title">
+                    Need assistance?
                 </div>
 
-                <div>
-                    Disclaimer
+
+                <div class="login-cyan-text">
+
+                    Please contact your assessment
+                    administrator for registration
+                    or access assistance.
+
                 </div>
 
+
+                <button
+                    type="button"
+                    class="login-cyan-button"
+                >
+                    GET HELP
+                </button>
+
             </div>
 
-
-            <div class="hn-version">
-                Version 1.0.0
-            </div>
-
-
-        </div>
+        </section>
 
 
     </div>
@@ -1994,31 +2152,32 @@ body {
 </div>
 
 
-<!-- ============================================================
-     ALERTA
-     ============================================================ -->
+<!-- ALERTA -->
 
 <div
     id="testNotice"
-    class="hn-notice"
+    class="login-test-notice"
 >
 
-    <div class="hn-notice-box">
+    <div class="login-test-notice-box">
 
-        <div class="hn-notice-icon">
+        <div class="login-test-notice-icon">
             ⚠
         </div>
 
-        <div class="hn-notice-title">
+
+        <div class="login-test-notice-title">
             ALERT
         </div>
 
+
         <div
             id="noticeUsername"
-            class="hn-notice-username"
+            class="login-test-notice-user"
         ></div>
 
-        <div class="hn-notice-text">
+
+        <div class="login-test-notice-text">
 
             HI.
 
@@ -2028,10 +2187,11 @@ body {
 
         </div>
 
+
         <button
             type="button"
-            class="hn-notice-button"
             id="noticeOkButton"
+            class="login-test-notice-button"
         >
             OK
         </button>
@@ -2057,16 +2217,6 @@ document.addEventListener(
                 "usernameInput"
             );
 
-        const accessCodeInput =
-            document.getElementById(
-                "accessCodeInput"
-            );
-
-        const showCodeButton =
-            document.getElementById(
-                "showCodeButton"
-            );
-
         const notice =
             document.getElementById(
                 "testNotice"
@@ -2089,40 +2239,7 @@ document.addEventListener(
 
 
         let submitted = false;
-
         let timer = null;
-
-
-        /* SHOW / HIDE */
-
-        showCodeButton.addEventListener(
-            "click",
-            function() {
-
-                if (
-                    accessCodeInput.type
-                    ===
-                    "password"
-                ) {
-
-                    accessCodeInput.type =
-                        "text";
-
-                    showCodeButton.textContent =
-                        "HIDE";
-
-                } else {
-
-                    accessCodeInput.type =
-                        "password";
-
-                    showCodeButton.textContent =
-                        "SHOW";
-
-                }
-
-            }
-        );
 
 
         function continueLogin() {
