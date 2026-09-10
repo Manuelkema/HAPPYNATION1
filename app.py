@@ -1895,43 +1895,29 @@ body {
 
         </div>
 
-        <div
+       <div
     class="ref-brand"
     style="
         width: 82px;
-        height: 32px;
+        height: 42px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 6px;
+        overflow: visible;
     "
 >
-    <div
-        style="
-            font-size: 10px;
-            line-height: 0.95;
-            text-align: right;
-            color: #5ebf72;
-            font-weight: 700;
-            white-space: nowrap;
-        "
-    >
-        Rap<br>Nation
-    </div>
-
     <img
         src="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.png"
         alt=""
         style="
-            width: 28px;
-            height: 28px;
+            width: 48px;
+            height: 48px;
             object-fit: contain;
             display: block;
             flex-shrink: 0;
         "
     >
 </div>
-
     </header>
 
 
