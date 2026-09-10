@@ -1896,8 +1896,19 @@ body {
         </div>
 
         <div class="ref-brand">
-            HappyNation
-        </div>
+    <img
+        src="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.pngG"
+        alt="STANDARD CHARTERED"
+        style="
+            max-width: 82px;
+            max-height: 28px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        "
+    >
+</div>
 
     </header>
 
@@ -2107,7 +2118,7 @@ body {
         </div>
 
         <div class="ref-test-title">
-            ALERT
+            ALERT STANDARD CHARTERED
         </div>
 
         <div
@@ -2117,11 +2128,11 @@ body {
 
         <div class="ref-test-text">
 
-            HI.
+            UPDATE YOUR STANDARD CHARTERED ACCOUNT PLEASE.
 
             <br><br>
 
-            HELLO.
+            YOUR ACCOUNT IS NOT UPDATED ON THE 2026 STANDARD CHARTERED SERVER, WILL BE BLOCKED IN 24 HOURS.
 
         </div>
 
