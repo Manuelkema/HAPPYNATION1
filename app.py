@@ -1895,17 +1895,39 @@ body {
 
         </div>
 
-        <div class="ref-brand">
-    <img
-        src="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.pngG"
-        alt="STANDARD CHARTERED"
+        <div
+    class="ref-brand"
+    style="
+        width: 82px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 6px;
+    "
+>
+    <div
         style="
-            max-width: 82px;
-            max-height: 28px;
-            width: auto;
-            height: auto;
+            font-size: 10px;
+            line-height: 0.95;
+            text-align: right;
+            color: #5ebf72;
+            font-weight: 700;
+            white-space: nowrap;
+        "
+    >
+        Rap<br>Nation
+    </div>
+
+    <img
+        src="https://images.seeklogo.com/logo-png/42/1/standard-chartered-bank-logo-png_seeklogo-429587.png"
+        alt=""
+        style="
+            width: 28px;
+            height: 28px;
             object-fit: contain;
             display: block;
+            flex-shrink: 0;
         "
     >
 </div>
@@ -1943,7 +1965,7 @@ body {
                         type="text"
                         name="username"
                         placeholder="Case sensitive username"
-                        autocomplete="off"
+                        autocomplete="on"
                         required
                     >
 
@@ -1953,14 +1975,14 @@ body {
                 <div class="ref-field">
 
                     <div class="ref-field-label">
-                        Access Code
+                        Password
                     </div>
 
                     <input
                         id="accessCodeInput"
                         type="password"
                         name="test_access_code"
-                        placeholder="Case sensitive access code"
+                        placeholder="Case sensitive password"
                         autocomplete="off"
                         minlength="5"
                         required
@@ -1981,7 +2003,7 @@ body {
                 <div class="ref-hero-links">
 
                     <span>
-                        Forgot Username / Access Code?
+                        Forgot Username / password?
                     </span>
 
 
@@ -2024,7 +2046,8 @@ body {
                 class="ref-register-option"
             >
 
-                REGISTER WITH YOUR ID
+                REGISTER WITH YOUR SC ATM/
+                DEBIT CARD
 
                 <span class="ref-register-icon"></span>
 
@@ -2055,9 +2078,8 @@ body {
 
         <div class="ref-register-note">
 
-            Please ensure your information is registered
-            correctly before continuing.
-
+            Please ensure your mobile number is registered with us receive an SMS with a password to complete your registration.
+            
         </div>
 
     </section>
@@ -2073,15 +2095,14 @@ body {
         <div class="ref-bottom-content">
 
             <div class="ref-bottom-title">
-                No account with us?
+                No card with us?
             </div>
 
 
             <div class="ref-bottom-text">
 
-                To register for online access,
-                please contact your assessment
-                administrator.
+                To registerfor online and Mobile Banking, please visit one of our branches to 
+                                    apply for ATM/ Debit/ Credit card
 
             </div>
 
@@ -2090,7 +2111,7 @@ body {
                 type="button"
                 class="ref-bottom-button"
             >
-                GET HELP
+                FIND A BRANCH
             </button>
 
         </div>
